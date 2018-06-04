@@ -1,0 +1,161 @@
+@import 'minirest.styl'
+@import '_vars'
+@import '_media'
+@import '_code.styl'
+
+repeat(size)
+  str = ''
+  for i in size
+    str += '#'
+    p(str)
+  return str
+
+.reading
+  *::selection
+    color: #fff
+    background #314f70
+  &.fixed
+    width: 600px
+    margin: 0 auto
+  padding: 2vw
+  p
+    line-height: 1.75
+    padding: 0 1rem
+    letter-spacing: 0.3px
+    font-family: Monospaced Number,Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif
+    br
+      display: none
+    & ~ p
+      margin-bottom: 1.5rem
+  dl
+    margin-bottom: .5rem
+    dd
+      margin: .5rem 0
+  ul,
+  ol
+    margin-left: 1.1rem
+    margin-bottom: .5rem
+    li
+      margin: .5rem 0
+  dt
+    font-weight: 700
+    font-size: 1.1rem
+  a
+    text-decoration: none
+    color: #3f5eb5
+    padding: 0 2px
+    &:focus
+      outline: 1px solid #3f5eb5
+    &:hover
+      background: @color
+      border-radius: 2px
+      color: white
+  hr
+    border: none
+    background: #f5f5f5
+    height: 1px
+    margin: 2rem 0
+  for $i in 1..6
+    h{$i}
+      $size = (2rem - $i * .2rem)
+      font-size: $size
+      font-weight: normal
+      line-height: 1.2
+      margin: 2rem 0
+      color: darken($deep-blue-black, 10%)
+      if $i > 4
+        font-weight: 900
+      &:before
+        content: '# '
+        color: #3f5eb5
+  table
+    margin: 1.5rem 0
+    max-width: 100%
+    border-spacing: 0
+    border-collapse: collapse
+    thead
+      background: rgba(71, 88, 179, 0.07)
+    tr
+      border-bottom: 1px solid rgba(96, 125, 139, 0.09)
+      th,
+      td
+        padding: .5rem
+    tr:nth-of-type(even)
+      background: rgba(71, 88, 179, 0.07)
+  img
+    max-width: 120%
+    margin: 1rem auto
+    position: relative
+    box-shadow: 0 0 4rem 0 rgba(160,160,160,0.2)
+    left: -10%
+  blockquote
+    border-left: .4rem solid #eee
+    padding .5rem
+    margin: 1.5rem 0 1.5rem 1rem
+    p
+      font-weight: 700
+      font-size: 1.1rem
+      padding: 0 0.5rem
+      margin-bottom: .5rem
+  pre
+    padding: .5rem 1rem
+    margin: 1rem 0
+    background: $little-background
+  code
+    font-family: Manaco , monospace
+    border-radius: 0.2rem
+    max-width: 100%
+    overflow: scroll
+    line-height: 1.4
+
+  button,
+  a.button
+    padding: .4rem 1rem
+    border: none
+    background: lighten($normal-color, 50%)
+    font-size: .9rem
+    font-weight: normal
+    color: white
+    border-bottom: 4px solid lighten($normal-color, 20%)
+    outline: none
+    transition: all .2s
+    cursor: pointer
+    border-radius: .2rem
+    display: inline-block
+    margin: .2rem 0
+    line-height: 1.2
+    &:hover
+      background: lighten($normal-color, 20%)
+      border-bottom: 4px solid lighten($normal-color, 5%)
+    &.solid,
+    &.transparent
+      background: transparent
+      border-bottom: 4px solid transparent
+      color: $normal-color
+      border: 1px solid $normal-color
+    &.transparent:hover
+      color: white
+      background: $normal-color
+
+  .button-group
+    display: block
+    font-size: 0
+    button
+      border-radius: 0
+      display: inline-block
+      position: relative
+      border-right: 1px solid lighten($normal-color, 20%)
+      &:first-of-type
+        border-top-left-radius: .2rem
+        border-bottom-left-radius: .2rem
+      &:last-of-type
+        border-top-right-radius: .2rem
+        border-bottom-right-radius: .2rem
+        border-right: 0
+
+  section.box
+    background: #f9fbfd
+    border: 1px solid #ececec
+    padding-bottom: 0
+
+  
