@@ -131,6 +131,9 @@ th {
 .reading {
   padding: 2vw;
 }
+.reading.no-padding {
+  padding: 0;
+}
 .reading *::selection {
   color: #fff;
   background: #314f70;

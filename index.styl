@@ -11,13 +11,15 @@ repeat(size)
   return str
 
 .reading
+  padding: 2vw
+  &.no-padding
+    padding 0
   *::selection
     color: #fff
     background #314f70
   &.fixed
     width: 600px
     margin: 0 auto
-  padding: 2vw
   p
     line-height: 1.75
     padding: 0 1rem
